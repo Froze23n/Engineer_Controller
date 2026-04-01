@@ -12,3 +12,7 @@ Core/Inc/*
 
 Drivers
 Middlewares
+
+USB_DEVICE/APP/*
+!USB_DEVICE/APP/usbd_cdc_if.c
+USB_DEVICE/Target

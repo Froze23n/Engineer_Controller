@@ -69,7 +69,7 @@ void Error_Handler(void);
 #define Blue_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
-
+#define PI (3.1415926536f)
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
