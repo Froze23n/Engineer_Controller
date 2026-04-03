@@ -59,28 +59,28 @@ void Encoder_Task(void) //1000Hz频率执行
 
     if(cnt == 19){
         static const int32_t Joint_Offset[NUM_ENCODERS] = {
-            -1629,
-            -1746,
-            -3366,
-            -2169,
-            -3620,
-            -3338,
-            -469
+            -2652,
+            -3744,
+            -3368,
+            -2164,
+            -3689,
+            -3386,
+            -1094
         };
         #define PI_OVER_2048 (PI / 2048.0f) //12位分辨率
         //编码器安装顺序是乱的
-        Joint_Angle[0] = Regulate_Radians((Joint_Offset[0] + raw_angle[0]) * PI_OVER_2048 );
+        Joint_Angle[0] = + Regulate_Radians((Joint_Offset[0] + raw_angle[0]) * PI_OVER_2048 );
 
-        Joint_Angle[1] = Regulate_Radians((Joint_Offset[1] + raw_angle[2]) * PI_OVER_2048);
+        Joint_Angle[1] = + Regulate_Radians((Joint_Offset[1] + raw_angle[2]) * PI_OVER_2048);
         
-        Joint_Angle[2] = Regulate_Radians((Joint_Offset[2] + raw_angle[1]) * PI_OVER_2048);
+        Joint_Angle[2] = - Regulate_Radians((Joint_Offset[2] + raw_angle[1]) * PI_OVER_2048);
 
-        Joint_Angle[3] = Regulate_Radians((Joint_Offset[3] + raw_angle[3]) * PI_OVER_2048);
+        Joint_Angle[3] = - Regulate_Radians((Joint_Offset[3] + raw_angle[3]) * PI_OVER_2048);
 
-        Joint_Angle[4] = Regulate_Radians((Joint_Offset[4] + raw_angle[4]) * PI_OVER_2048);
+        Joint_Angle[4] = + Regulate_Radians((Joint_Offset[4] + raw_angle[4]) * PI_OVER_2048);
 
-        Joint_Angle[5] = Regulate_Radians((Joint_Offset[5] + raw_angle[6]) * PI_OVER_2048);
+        Joint_Angle[5] = - Regulate_Radians((Joint_Offset[5] + raw_angle[6]) * PI_OVER_2048);
 
-        Joint_Angle[6] = Regulate_Radians((Joint_Offset[6] + raw_angle[5]) * PI_OVER_2048);
+        Joint_Angle[6] = - Regulate_Radians((Joint_Offset[6] + raw_angle[5]) * PI_OVER_2048);
     }
 }
