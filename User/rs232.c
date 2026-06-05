@@ -10,10 +10,11 @@ void RS232_Init(void){
     HAL_TIM_Base_Start_IT(&htim7);
 }
 
+// int debug = 0;
 void RS232_Task(void){
     // static uint16_t cnt = 0;
-    // cnt = (cnt + 1) % 100;
-
+    // cnt = (cnt + 1) % 10;
+    // debug += 50;
     if(1){ //20Hz
         static uint8_t tx_buffer[64];
         static uint8_t seq = 0;
